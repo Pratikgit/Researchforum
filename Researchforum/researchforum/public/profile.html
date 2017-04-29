@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+</head>
+
+<body>
+  <html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/common.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="section"></div>
+  <main>
+    <center>
+      <h4 class="white-text">Welcome to Research Forum</h4>
+      <p class="white-text">Let's start by personalizing the feed. Please select the preferences.</p>
+      <!-- class="indigo-text" -->
+      <div class="section"></div>
+    </center>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 10px 48px 0px 48px; border: 1px solid #EEE;width: 100%">
+
+          <form id="profile_form" class="col s12" method="post">
+            <br>
+            <div class='row'>
+              <div class='input-field col s12'>
+                <i class="material-icons prefix">account_circle</i>
+                <input id="bio" type="text" class="validate">
+                <label for="bio">Short Bio (50 characters)</label>
+              </div>
+            </div>
+            <br>
+
+            <h5 style="font-size: 1.44rem">Your Preferences</h5>
+
+            <div class='row'>
+              <div class='input-field col s4'>
+                <div class="input-field">
+                  <input type="checkbox" class="preferences" id="preference1" data-name="preference1" />
+                  <label for="preference1">Computer Networks</label>
+                </div>
+                <div class="input-field">
+                  <input type="checkbox" class="preferences" id="preference2" data-name="preference2" />
+                  <label for="preference2">Operating Systems</label>
+                </div>
+                <div class="input-field">
+                  <input type="checkbox" class="preferences" id="preference3" data-name="preference3" />
+                  <label for="preference3">Computer Graphics</label>
+                </div>
+              </div>
+              <div class='input-field col s4'>
+                <div class="input-field">
+                  <input type="checkbox" class="preferences" id="preference4" data-name="preference4" />
+                  <label for="preference4">Human Computer Interaction</label>
+                </div>
+                <div class="input-field">
+                  <input type="checkbox" class="preferences" id="preference5" data-name="preference5" />
+                  <label for="preference5">Distributed Systems</label>
+                </div>
+                <div class="input-field">
+                  <input type="checkbox" class="preferences" id="preference6" data-name="preference6" />
+                  <label for="preference6">Machine Learning</label>
+                </div>
+              </div>
+              <div class='input-field col s4'>
+                <div class="input-field">
+                  <input type="checkbox" class="preferences" id="preference7" data-name="preference7" />
+                  <label for="preference7">Natural Language Processing</label>
+                </div>
+                <div class="input-field">
+                  <input type="checkbox" class="preferences" id="preference8" data-name="preference8" />
+                  <label for="preference8">Data Science</label>
+                </div>
+                <div class="input-field">
+                  <input type="checkbox" class="preferences" id="preference9" data-name="preference9" />
+                  <label for="preference9">Artificial Intelligence</label>
+                </div>
+              </div>
+            </div>
+            <br>
+            <center>
+              <div class='row'>
+                <button id="submit_profile_form" type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Submit</button>
+              </div>
+            </center>
+          </form>
+        </div>
+      </div>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script>
+    $(function(){ 
+      
+      $("#submit_profile_form").click(function(e){
+        e.preventDefault();
+        var preferences = [];
+        $.each($(".preferences"), function(){
+          if($(this).prop('checked')){
+            preferences.push($(this).data("name"));
+          }
+        });
+        
+        console.log("preferences: " , preferences);
+      });
+    });
+  </script>
+</body>
+
+</html>
+  
+  
+</body>
+</html>
