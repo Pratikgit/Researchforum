@@ -1,0 +1,3 @@
+include researchforum/config/deployment.ini_tmpl
+recursive-include researchforum/public *
+recursive-include researchforum/templates *
