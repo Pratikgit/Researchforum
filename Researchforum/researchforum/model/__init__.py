@@ -22,14 +22,8 @@ class Paper(Document):
     tag_ids = StringField(default = None)
 
     def to_dict(self):
-        return {
-                'title': self.title,
-                'authors': self.authors,
-                'conference': self.authors,
-                'publication_date': self.publication_date,
-                'url': self.url,
-                'tag_ids': self.tag_ids
-                }
+        return [str(self.id),self.title,self.authors,self.authors,
+                self.publication_date,self.url,self.tag_ids]
 
 class Tags(Document):
     domain_name = StringField(default = None)
@@ -41,6 +35,9 @@ class Summary(Document):
     time = DateTimeField(default = None)
     comments = StringField(default = None)
     upvote = IntField(default = 0)
+
+    def to_dict(self):
+        return [str(self.id),self.contents,self.user_id,self.paper_id,str(self.upvote)]
 
 class Comments(Document):
     comment = StringField(required = True)

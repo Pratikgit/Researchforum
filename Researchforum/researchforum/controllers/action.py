@@ -69,6 +69,7 @@ class ActionController(BaseController):
         u = User.objects(id = c.user_id)[0] 
         log.info("User Data:%s" %u)
         c.default_papers = []
+        c.final_papers = []
         if u.tag_ids:
             tags = u.tag_ids.split(", ") 
             for paper in Paper.objects():
@@ -76,8 +77,17 @@ class ActionController(BaseController):
                 for tag in tags:
                     if tag in paper_tags:
                         c.default_papers.append(paper.to_dict())
-            log.info("Default Papers:%s" %c.default_papers)
-            return render('/default_feeds.html')
+            for paper in c.default_papers:
+                summary_list = []
+                for s in Summary.objects():
+                    print "%s %s" %(paper[0], s.paper_id)
+                    if paper[0] == s.paper_id:
+                        summary_list.append(s.to_dict())
+                new_p = paper
+                new_p.append(summary_list)
+                c.final_papers.append(new_p) 
+            log.info("Default Papers:%s" %c.final_papers)
+            return render('/wall.html')
         else:
             return "No Feed to Display..."
     
