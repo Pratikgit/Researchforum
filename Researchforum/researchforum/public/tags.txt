@@ -1,0 +1,9 @@
+Computer Networks
+Operating Systems
+Computer Graphics
+Human Computer Interaction
+Distributed Systems
+Machine Learning
+Natural Language Processing
+Data Science
+Artificial Intelligence

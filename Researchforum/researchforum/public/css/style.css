@@ -9,10 +9,10 @@
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
 	font-size: inherit;
 }
-
 
 .white-text{
 	color: white;
@@ -22,7 +22,6 @@
 	text-decoration: underline;
 	font-size:18px;
 }
-
 
 .no_margin{
 	margin: 0px !important;
